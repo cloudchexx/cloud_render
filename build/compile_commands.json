@@ -1,0 +1,20 @@
+[
+{
+  "directory": "/root/Project/tinyrenderer/cloud_render/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/cloudrender.dir/main.cpp.o -c /root/Project/tinyrenderer/cloud_render/main.cpp",
+  "file": "/root/Project/tinyrenderer/cloud_render/main.cpp",
+  "output": "CMakeFiles/cloudrender.dir/main.cpp.o"
+},
+{
+  "directory": "/root/Project/tinyrenderer/cloud_render/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/cloudrender.dir/tgaimage.cpp.o -c /root/Project/tinyrenderer/cloud_render/tgaimage.cpp",
+  "file": "/root/Project/tinyrenderer/cloud_render/tgaimage.cpp",
+  "output": "CMakeFiles/cloudrender.dir/tgaimage.cpp.o"
+},
+{
+  "directory": "/root/Project/tinyrenderer/cloud_render/build",
+  "command": "/usr/bin/c++   -g -std=gnu++17 -o CMakeFiles/cloudrender.dir/model.cpp.o -c /root/Project/tinyrenderer/cloud_render/model.cpp",
+  "file": "/root/Project/tinyrenderer/cloud_render/model.cpp",
+  "output": "CMakeFiles/cloudrender.dir/model.cpp.o"
+}
+]
