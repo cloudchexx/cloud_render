@@ -131,47 +131,14 @@ void triangle(Vec3f *pts ,Vec2i *uvs ,  float* zBuffer ,TGAImage &image, float i
     }
 }
 
-// void triangle(Vec3f* pts, Vec2i* uvs, float* zBuffer, TGAImage& image, float intensity)
-// {
-//     float minx = std::min(pts[0].x, std::min(pts[1].x, pts[2].x ));
-//     float maxx = std::max(pts[0].x, std::max(pts[1].x, pts[2].x ));
-//     float miny = std::min(pts[0].y, std::min(pts[1].y, pts[2].y ));
-//     float maxy = std::max(pts[0].y, std::max(pts[1].y, pts[2].y ));
-
-//     int min_x = (int)std::floor(minx);
-//     int max_x = (int)std::ceil(maxx);
-//     int min_y = (int)std::floor(miny);
-//     int max_y = (int)std::ceil(maxy);
-
-//     for (int i = min_x; i <= max_x; i++)
-//     {
-//         for (int j = min_y; j <= max_y; j++)
-//         {
-//             Vec3f P(i, j, 0);
-//             Vec2i uvP;
-//             Vec3f baryCoord = barycentric(pts, P);
-//             if (baryCoord.x < -0.01 || baryCoord.y < -0.01 || baryCoord.z < -0.01)
-//                 continue;
-//             float z_interpolation = baryCoord.x * pts[0].z + baryCoord.y * pts[1].z + baryCoord.z * pts[2].z;
-//             uvP = uvs[0] * baryCoord.x + uvs[1] * baryCoord.y + uvs[2] * baryCoord.z;
-//             if (z_interpolation > zBuffer[static_cast<int>(P.x + P.y * width)])
-//             {
-//                 zBuffer[static_cast<int>(i + j * width)] = z_interpolation;
-//                 TGAColor color = model->diffuse(uvP);
-//                 image.set(P.x, P.y, TGAColor(color.r * intensity, color.g * intensity, color.b * intensity, 255));
-//             }
-//         }
-//     }
-// }
-
 
 int main(int argc, char** argv) {
     if (2 == argc) {
         model = new Model(argv[1]);
     }
     else {
-        // model = new Model("../obj/diablo3_pose/diablo3_pose.obj");
-        model = new Model("../obj/african_head/african_head.obj");
+        model = new Model("../obj/diablo3_pose/diablo3_pose.obj");
+        // model = new Model("../obj/african_head/african_head.obj");
     }
 
     TGAImage image(width, height, TGAImage::RGB);

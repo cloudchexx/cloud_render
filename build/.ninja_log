@@ -1,5 +1,0 @@
-# ninja log v5
-1	588	1744685660033043603	CMakeFiles/cloudrender.dir/tgaimage.cpp.o	6adb9a82b3fe89b4
-2	711	1744685660153043559	CMakeFiles/cloudrender.dir/model.cpp.o	e8a247cb1da9ec65
-2	508	1744685923812988152	CMakeFiles/cloudrender.dir/main.cpp.o	9dac3b18d1ef33a6
-508	1015	1744685924322988001	cloudrender	c6e8112b01a098f1
