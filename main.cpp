@@ -82,7 +82,7 @@ void line(Vec2f t0, Vec2f t1,TGAImage &image,TGAColor color){
 }
 
 //向量叉乘算法，通过向量判断点是否在三角形内
-void triangle(Vec3f *pts , float* zBuffer ,TGAImage &image, TGAColor color) { 
+void triangle(Vec3f *pts ,Vec2i *uvs ,  float* zBuffer ,TGAImage &image, float intensity) { 
 
     //提出三个坐标
     Vec3f t0 = pts[0];
@@ -93,10 +93,6 @@ void triangle(Vec3f *pts , float* zBuffer ,TGAImage &image, TGAColor color) {
     if(t0.y > t1.y) std::swap(t0, t1);
     if(t0.y > t2.y) std::swap(t0, t2);
     if(t1.y > t2.y) std::swap(t1, t2);
-
-    // line(Vec2f(t0.x,t0.y), Vec2f(t1.x,t1.y), image, color); 
-    // line(Vec2f(t1.x,t1.y), Vec2f(t2.x,t2.y), image, color);
-    // line(Vec2f(t0.x,t0.y), Vec2f(t2.x,t2.y), image, color);
 
     // 包围盒,虽然是三维坐标，但实际上我门只需要x和y坐标，z坐标是深度值
     Vec2f boxmin = Vec2f(std::min(t0.x, std::min(t1.x, t2.x)), std::min(t0.y, std::min(t1.y, t2.y)));
@@ -111,6 +107,7 @@ void triangle(Vec3f *pts , float* zBuffer ,TGAImage &image, TGAColor color) {
     for (int i = boxmin.x; i <= boxmax.x; i++) {
         for (int j = boxmin.y; j <= boxmax.y; j++) {
             Vec3f p(i, j, 0);
+            Vec2i uvP;
             Vec3f baryCoord = barycentric(pts, p);
 
             // 计算三个边的叉乘（注意方向一致性）
@@ -121,14 +118,51 @@ void triangle(Vec3f *pts , float* zBuffer ,TGAImage &image, TGAColor color) {
             // 判断叉乘结果的 z 分量是否同号（点在三角形内）
             if ((cross0.z >= 0 && cross1.z >= 0 && cross2.z >= 0) ||(cross0.z <= 0 && cross1.z <= 0 && cross2.z <= 0)){
                 float z_interpolation = baryCoord.x * pts[0].z + baryCoord.y * pts[1].z + baryCoord.z * pts[2].z;
-                if(z_interpolation > zBuffer[static_cast<int>(p.x + p.y * width)]){
-                    zBuffer[static_cast<int>(i + j * width)] = z_interpolation;
+                if(z_interpolation > zBuffer[static_cast<int>(p.x + p.y * width)]){ //只有z值大于zBuffer的值才会更新
+                    zBuffer[static_cast<int>(i + j * width)] = z_interpolation;  //插值z
+                    uvP = uvs[0] * baryCoord.x + uvs[1] * baryCoord.y + uvs[2] * baryCoord.z;
+                    TGAColor texColor = model->diffuse(uvP);
+                    //加上光照
+                    TGAColor color = TGAColor(texColor.r * intensity, texColor.g * intensity, texColor.b * intensity, 255);
                     image.set(p.x, p.y, color);
                 }
             }
         }
     }
 }
+
+// void triangle(Vec3f* pts, Vec2i* uvs, float* zBuffer, TGAImage& image, float intensity)
+// {
+//     float minx = std::min(pts[0].x, std::min(pts[1].x, pts[2].x ));
+//     float maxx = std::max(pts[0].x, std::max(pts[1].x, pts[2].x ));
+//     float miny = std::min(pts[0].y, std::min(pts[1].y, pts[2].y ));
+//     float maxy = std::max(pts[0].y, std::max(pts[1].y, pts[2].y ));
+
+//     int min_x = (int)std::floor(minx);
+//     int max_x = (int)std::ceil(maxx);
+//     int min_y = (int)std::floor(miny);
+//     int max_y = (int)std::ceil(maxy);
+
+//     for (int i = min_x; i <= max_x; i++)
+//     {
+//         for (int j = min_y; j <= max_y; j++)
+//         {
+//             Vec3f P(i, j, 0);
+//             Vec2i uvP;
+//             Vec3f baryCoord = barycentric(pts, P);
+//             if (baryCoord.x < -0.01 || baryCoord.y < -0.01 || baryCoord.z < -0.01)
+//                 continue;
+//             float z_interpolation = baryCoord.x * pts[0].z + baryCoord.y * pts[1].z + baryCoord.z * pts[2].z;
+//             uvP = uvs[0] * baryCoord.x + uvs[1] * baryCoord.y + uvs[2] * baryCoord.z;
+//             if (z_interpolation > zBuffer[static_cast<int>(P.x + P.y * width)])
+//             {
+//                 zBuffer[static_cast<int>(i + j * width)] = z_interpolation;
+//                 TGAColor color = model->diffuse(uvP);
+//                 image.set(P.x, P.y, TGAColor(color.r * intensity, color.g * intensity, color.b * intensity, 255));
+//             }
+//         }
+//     }
+// }
 
 
 int main(int argc, char** argv) {
@@ -164,14 +198,15 @@ int main(int argc, char** argv) {
         Vec3f normal = (worldCoords[2] - worldCoords[0]) ^ (worldCoords[1] - worldCoords[0]);//计算三角形法线
         normal.normalize();
         float intensity = normal * light_dir;
-        if(intensity > 0)
-            triangle(screenCoords, zBuffer , image, TGAColor(intensity * 255, intensity * 255, intensity * 255, 255));
+        if(intensity > 0){
+            Vec2i uv[3];//uv坐标
+            for (int j = 0; j < 3; j++) uv[j] = model->uv(i, j);
+            triangle(screenCoords, uv ,  zBuffer , image, intensity);
+        }
     }
 
     image.flip_vertically(); 
     image.write_tga_file("output.tga");
-
-    //打印一个hollowworld
     
     return 0;
 }
