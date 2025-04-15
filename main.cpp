@@ -131,7 +131,6 @@ void triangle(Vec3f *pts , float* zBuffer ,TGAImage &image, TGAColor color) {
 }
 
 
-//测试
 int main(int argc, char** argv) {
     if (2 == argc) {
         model = new Model(argv[1]);
