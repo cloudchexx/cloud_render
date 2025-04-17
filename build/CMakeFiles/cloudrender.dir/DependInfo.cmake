@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/root/Project/tinyrenderer/cloud_render/main.cpp" "CMakeFiles/cloudrender.dir/main.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/main.cpp.o.d"
   "/root/Project/tinyrenderer/cloud_render/model.cpp" "CMakeFiles/cloudrender.dir/model.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/model.cpp.o.d"
+  "/root/Project/tinyrenderer/cloud_render/testcode.cpp" "CMakeFiles/cloudrender.dir/testcode.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/testcode.cpp.o.d"
   "/root/Project/tinyrenderer/cloud_render/tgaimage.cpp" "CMakeFiles/cloudrender.dir/tgaimage.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/tgaimage.cpp.o.d"
   )
 

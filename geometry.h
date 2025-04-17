@@ -57,4 +57,30 @@ template <class t> std::ostream& operator<<(std::ostream& s, Vec3<t>& v) {
 	return s;
 }
 
+//以下是矩阵类的定义,我们会在geometry.cpp实现这个矩阵类
+const int DEFAULT_ALLOC = 4; //默认默认是四行四列方阵
+
+class Matrix{
+	private:
+		std::vector<std::vector<float>> m; //二维数组，存储矩阵	
+		int rows; //行数
+		int cols; //列数
+	public:
+		Matrix(int r = DEFAULT_ALLOC, int c = DEFAULT_ALLOC); //矩阵的构造函数，默认是四行四列矩阵，除非用户自己定义
+		inline int nrows();  //返回行数
+		inline int ncols();  //返回列数
+
+		static Matrix identity(int n); //创建n行n列的单位矩阵
+		std::vector<float>& operator[](int i); //重载下标运算符，返回第i行
+		Matrix operator *(Matrix& m2); //重载乘法运算符，返回两个矩阵的乘积
+		// Matrix operator*(float f); //重载乘法运算符，返回矩阵和数的乘积
+		Matrix operator+(Matrix& m2); //重载加法运算符，返回两个矩阵的和
+		Matrix operator-(Matrix& m2); //重载减法运算符，返回两个矩阵的差
+		Matrix transpose(); //转置矩阵
+		Matrix inverse(); //求逆矩阵
+		Matrix adjoint(); //求伴随矩阵
+
+		friend std::ostream& operator<<(std::ostream& s, Matrix& m); //重载输出运算符，输出矩阵
+};
+
 #endif //__GEOMETRY_H__

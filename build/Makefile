@@ -571,6 +571,30 @@ model.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/model.cpp.s
 .PHONY : model.cpp.s
 
+testcode.o: testcode.cpp.o
+.PHONY : testcode.o
+
+# target to build an object file
+testcode.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/testcode.cpp.o
+.PHONY : testcode.cpp.o
+
+testcode.i: testcode.cpp.i
+.PHONY : testcode.i
+
+# target to preprocess a source file
+testcode.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/testcode.cpp.i
+.PHONY : testcode.cpp.i
+
+testcode.s: testcode.cpp.s
+.PHONY : testcode.s
+
+# target to generate assembly for a file
+testcode.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/testcode.cpp.s
+.PHONY : testcode.cpp.s
+
 tgaimage.o: tgaimage.cpp.o
 .PHONY : tgaimage.o
 
@@ -641,6 +665,9 @@ help:
 	@echo "... model.o"
 	@echo "... model.i"
 	@echo "... model.s"
+	@echo "... testcode.o"
+	@echo "... testcode.i"
+	@echo "... testcode.s"
 	@echo "... tgaimage.o"
 	@echo "... tgaimage.i"
 	@echo "... tgaimage.s"

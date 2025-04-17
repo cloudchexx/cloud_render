@@ -1,1 +1,1 @@
-/usr/bin/c++ -g CMakeFiles/cloudrender.dir/main.cpp.o CMakeFiles/cloudrender.dir/tgaimage.cpp.o CMakeFiles/cloudrender.dir/model.cpp.o -o cloudrender 
+/usr/bin/c++ -g CMakeFiles/cloudrender.dir/main.cpp.o CMakeFiles/cloudrender.dir/tgaimage.cpp.o CMakeFiles/cloudrender.dir/model.cpp.o CMakeFiles/cloudrender.dir/testcode.cpp.o -o cloudrender 
