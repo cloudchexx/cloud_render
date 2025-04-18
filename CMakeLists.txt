@@ -4,7 +4,7 @@ project(LineDrawing VERSION 0.1.0 LANGUAGES C CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(cloudrender main.cpp tgaimage.cpp tgaimage.h geometry.h model.h model.cpp testcode.cpp) 
+add_executable(cloudrender main.cpp tgaimage.cpp tgaimage.h geometry.h geometry.cpp model.h model.cpp testcode.cpp) 
 
 include(CTest)
 enable_testing()

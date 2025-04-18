@@ -97,10 +97,24 @@ CMakeFiles/cloudrender.dir/tgaimage.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cloudrender.dir/tgaimage.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Project/tinyrenderer/cloud_render/tgaimage.cpp -o CMakeFiles/cloudrender.dir/tgaimage.cpp.s
 
+CMakeFiles/cloudrender.dir/geometry.cpp.o: CMakeFiles/cloudrender.dir/flags.make
+CMakeFiles/cloudrender.dir/geometry.cpp.o: /root/Project/tinyrenderer/cloud_render/geometry.cpp
+CMakeFiles/cloudrender.dir/geometry.cpp.o: CMakeFiles/cloudrender.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cloudrender.dir/geometry.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cloudrender.dir/geometry.cpp.o -MF CMakeFiles/cloudrender.dir/geometry.cpp.o.d -o CMakeFiles/cloudrender.dir/geometry.cpp.o -c /root/Project/tinyrenderer/cloud_render/geometry.cpp
+
+CMakeFiles/cloudrender.dir/geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/cloudrender.dir/geometry.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /root/Project/tinyrenderer/cloud_render/geometry.cpp > CMakeFiles/cloudrender.dir/geometry.cpp.i
+
+CMakeFiles/cloudrender.dir/geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/cloudrender.dir/geometry.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /root/Project/tinyrenderer/cloud_render/geometry.cpp -o CMakeFiles/cloudrender.dir/geometry.cpp.s
+
 CMakeFiles/cloudrender.dir/model.cpp.o: CMakeFiles/cloudrender.dir/flags.make
 CMakeFiles/cloudrender.dir/model.cpp.o: /root/Project/tinyrenderer/cloud_render/model.cpp
 CMakeFiles/cloudrender.dir/model.cpp.o: CMakeFiles/cloudrender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/cloudrender.dir/model.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cloudrender.dir/model.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cloudrender.dir/model.cpp.o -MF CMakeFiles/cloudrender.dir/model.cpp.o.d -o CMakeFiles/cloudrender.dir/model.cpp.o -c /root/Project/tinyrenderer/cloud_render/model.cpp
 
 CMakeFiles/cloudrender.dir/model.cpp.i: cmake_force
@@ -114,7 +128,7 @@ CMakeFiles/cloudrender.dir/model.cpp.s: cmake_force
 CMakeFiles/cloudrender.dir/testcode.cpp.o: CMakeFiles/cloudrender.dir/flags.make
 CMakeFiles/cloudrender.dir/testcode.cpp.o: /root/Project/tinyrenderer/cloud_render/testcode.cpp
 CMakeFiles/cloudrender.dir/testcode.cpp.o: CMakeFiles/cloudrender.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/cloudrender.dir/testcode.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/cloudrender.dir/testcode.cpp.o"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/cloudrender.dir/testcode.cpp.o -MF CMakeFiles/cloudrender.dir/testcode.cpp.o.d -o CMakeFiles/cloudrender.dir/testcode.cpp.o -c /root/Project/tinyrenderer/cloud_render/testcode.cpp
 
 CMakeFiles/cloudrender.dir/testcode.cpp.i: cmake_force
@@ -129,6 +143,7 @@ CMakeFiles/cloudrender.dir/testcode.cpp.s: cmake_force
 cloudrender_OBJECTS = \
 "CMakeFiles/cloudrender.dir/main.cpp.o" \
 "CMakeFiles/cloudrender.dir/tgaimage.cpp.o" \
+"CMakeFiles/cloudrender.dir/geometry.cpp.o" \
 "CMakeFiles/cloudrender.dir/model.cpp.o" \
 "CMakeFiles/cloudrender.dir/testcode.cpp.o"
 
@@ -137,11 +152,12 @@ cloudrender_EXTERNAL_OBJECTS =
 
 cloudrender: CMakeFiles/cloudrender.dir/main.cpp.o
 cloudrender: CMakeFiles/cloudrender.dir/tgaimage.cpp.o
+cloudrender: CMakeFiles/cloudrender.dir/geometry.cpp.o
 cloudrender: CMakeFiles/cloudrender.dir/model.cpp.o
 cloudrender: CMakeFiles/cloudrender.dir/testcode.cpp.o
 cloudrender: CMakeFiles/cloudrender.dir/build.make
 cloudrender: CMakeFiles/cloudrender.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable cloudrender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable cloudrender"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/cloudrender.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

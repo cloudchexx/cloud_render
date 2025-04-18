@@ -62,7 +62,7 @@ const int DEFAULT_ALLOC = 4; //默认默认是四行四列方阵
 
 class Matrix{
 	private:
-		std::vector<std::vector<float>> matrix; //二维数组，存储矩阵	
+		std::vector<std::vector<float>> m; //二维数组，存储矩阵	
 		int rows; //行数
 		int cols; //列数
 	public:

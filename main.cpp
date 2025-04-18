@@ -137,8 +137,8 @@ int main(int argc, char** argv) {
         model = new Model(argv[1]);
     }
     else {
-        model = new Model("../obj/diablo3_pose/diablo3_pose.obj");
-        // model = new Model("../obj/african_head/african_head.obj");
+        // model = new Model("../obj/diablo3_pose/diablo3_pose.obj");
+        model = new Model("../obj/african_head/african_head.obj");
     }
 
     TGAImage image(width, height, TGAImage::RGB);
@@ -173,7 +173,7 @@ int main(int argc, char** argv) {
     }
 
     image.flip_vertically(); 
-    image.write_tga_file("output.tga");
+    image.write_tga_file("111.tga");
     
     return 0;
 }

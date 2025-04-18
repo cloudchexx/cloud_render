@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/cloudrender.dir/geometry.cpp.o"
+  "CMakeFiles/cloudrender.dir/geometry.cpp.o.d"
   "CMakeFiles/cloudrender.dir/main.cpp.o"
   "CMakeFiles/cloudrender.dir/main.cpp.o.d"
   "CMakeFiles/cloudrender.dir/model.cpp.o"

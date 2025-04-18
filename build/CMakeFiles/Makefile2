@@ -109,12 +109,12 @@ clean: CMakeFiles/ContinuousSubmit.dir/clean
 CMakeFiles/cloudrender.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/cloudrender.dir/build.make CMakeFiles/cloudrender.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=1,2,3,4,5 "Built target cloudrender"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/root/Project/tinyrenderer/cloud_render/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target cloudrender"
 .PHONY : CMakeFiles/cloudrender.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/cloudrender.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /root/Project/tinyrenderer/cloud_render/build/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /root/Project/tinyrenderer/cloud_render/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/cloudrender.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /root/Project/tinyrenderer/cloud_render/build/CMakeFiles 0
 .PHONY : CMakeFiles/cloudrender.dir/rule

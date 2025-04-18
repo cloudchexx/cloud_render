@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/root/Project/tinyrenderer/cloud_render/geometry.cpp" "CMakeFiles/cloudrender.dir/geometry.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/geometry.cpp.o.d"
   "/root/Project/tinyrenderer/cloud_render/main.cpp" "CMakeFiles/cloudrender.dir/main.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/main.cpp.o.d"
   "/root/Project/tinyrenderer/cloud_render/model.cpp" "CMakeFiles/cloudrender.dir/model.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/model.cpp.o.d"
   "/root/Project/tinyrenderer/cloud_render/testcode.cpp" "CMakeFiles/cloudrender.dir/testcode.cpp.o" "gcc" "CMakeFiles/cloudrender.dir/testcode.cpp.o.d"
