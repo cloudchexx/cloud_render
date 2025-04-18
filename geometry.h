@@ -62,7 +62,7 @@ const int DEFAULT_ALLOC = 4; //默认默认是四行四列方阵
 
 class Matrix{
 	private:
-		std::vector<std::vector<float>> m; //二维数组，存储矩阵	
+		std::vector<std::vector<float>> matrix; //二维数组，存储矩阵	
 		int rows; //行数
 		int cols; //列数
 	public:
@@ -72,7 +72,7 @@ class Matrix{
 
 		static Matrix identity(int n); //创建n行n列的单位矩阵
 		std::vector<float>& operator[](int i); //重载下标运算符，返回第i行
-		Matrix operator *(Matrix& m2); //重载乘法运算符，返回两个矩阵的乘积
+		Matrix operator*(const Matrix& a) const; //重载乘法运算符，返回两个矩阵的乘积
 		// Matrix operator*(float f); //重载乘法运算符，返回矩阵和数的乘积
 		Matrix operator+(Matrix& m2); //重载加法运算符，返回两个矩阵的和
 		Matrix operator-(Matrix& m2); //重载减法运算符，返回两个矩阵的差
